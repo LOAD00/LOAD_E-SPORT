@@ -1,0 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Join-Formular validieren und absenden
+    const joinForm = document.getElementById("join-form");
+    joinForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Verhindert Seiten-Neuladen
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        alert(`Danke für deine Bewerbung, ${name}! Wir melden uns per E-Mail (${email}).`);
+    });
+});
