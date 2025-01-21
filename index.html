@@ -320,3 +320,98 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load E-Sport Team</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { color: #4CAF50; }
+        .team-member { margin-bottom: 20px; }
+        .team-info { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .chat-box { margin-top: 30px; }
+        #messages { border: 1px solid #ddd; padding: 10px; height: 300px; overflow-y: scroll; margin-bottom: 10px; }
+        #input { width: 100%; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h1>Willkommen beim Load E-Sport Team</h1>
+
+<h2>Teammitglieder</h2>
+<div id="team-members">
+    <!-- Teammitglieder werden hier angezeigt -->
+</div>
+
+<h2>Live-Chat</h2>
+<div class="chat-box">
+    <div id="messages">
+        <!-- Nachrichten erscheinen hier -->
+    </div>
+    <input type="text" id="input" placeholder="Gib eine Nachricht ein..." autocomplete="off">
+</div>
+
+<script>
+// Beispielteam-Daten
+const teamInfo = {
+    name: 'Load E-Sport',
+    members: [
+        { name: 'Player 1', role: 'Captain', rank: 'Pro', kills: 500, deaths: 300 },
+        { name: 'Player 2', role: 'Support', rank: 'Pro', kills: 350, deaths: 250 },
+        { name: 'Player 3', role: 'Sniper', rank: 'Pro', kills: 450, deaths: 200 }
+    ]
+};
+
+// Funktion zum Anzeigen der Teammitglieder
+function displayTeamMembers() {
+    const teamMembersDiv = document.getElementById('team-members');
+    teamInfo.members.forEach(player => {
+        const playerDiv = document.createElement('div');
+        playerDiv.className = 'team-member';
+        playerDiv.innerHTML = `
+            <div class="team-info">
+                <h3>${player.name} - ${player.role}</h3>
+                <p>Rank: ${player.rank}</p>
+                <p>Kills: ${player.kills} - Deaths: ${player.deaths}</p>
+            </div>
+        `;
+        teamMembersDiv.appendChild(playerDiv);
+    });
+}
+
+// Initialisieren der Team-Mitgliederanzeige
+displayTeamMembers();
+
+// Chat-Funktionalität
+const messagesDiv = document.getElementById('messages');
+const inputField = document.getElementById('input');
+
+// Funktion zum Senden von Nachrichten
+function sendMessage() {
+    const message = inputField.value;
+    if (message.trim() !== '') {
+        // Nachricht im Chat anzeigen
+        const messageDiv = document.createElement('p');
+        messageDiv.textContent = `Du: ${message}`;
+        messagesDiv.appendChild(messageDiv);
+
+        // Automatisch nach unten scrollen
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+        // Eingabefeld zurücksetzen
+        inputField.value = '';
+    }
+}
+
+// Ereignis, um Nachricht zu senden, wenn Enter gedrückt wird
+inputField.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+</script>
+
+</body>
+</html>
