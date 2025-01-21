@@ -320,3 +320,133 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Sport Motivationshilfe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 50px;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4682B4;
+            transform: scale(1.1);
+        }
+
+        .message {
+            font-size: 1.5rem;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 30px;
+            display: none;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .ad-container {
+            font-size: 1rem;
+            color: #FFD700;
+            margin-top: 30px;
+            opacity: 0.8;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>E-Sport Motivationshilfe</h1>
+
+<div class="buttons-container">
+    <button onclick="showMessage('Du bist nicht schlecht! Du musst dich nur verbessern. Fokussiere dich mehr!')">QUAF: Du bist gestorben</button>
+    <button onclick="showMessage('Jeder hat mal einen schlechten Moment! Übe weiter, du wirst stärker!')">QUAF: Schlechte Runde</button>
+    <button onclick="showMessage('Du hast gut gespielt! Jeder Fehler ist eine Gelegenheit zu lernen.')">QUAF: Du hast verloren</button>
+    <button onclick="showMessage('Nimm es leicht, du wirst das nächste Mal besser sein!')">QUAF: Du hast einen Fehler gemacht</button>
+    <button onclick="showMessage('Gut gemacht! Verbessere deine Taktiken und du wirst gewinnen!')">QUAF: Du wurdest überrannt</button>
+    <button onclick="showMessage('Bleib ruhig, du hast das Potenzial! Überprüfe deine Taktik.')">QUAF: Taktik misslungen</button>
+    <button onclick="showMessage('Das war nur ein kleiner Rückschlag, lass dich davon nicht runterziehen!')">QUAF: Du hast dein Ziel verfehlt</button>
+    <button onclick="showMessage('Kein Grund zur Sorge! Jeder Fehler hilft dir zu wachsen!')">QUAF: Du bist gescheitert</button>
+    <button onclick="showMessage('Bleib dran! Du bist auf dem richtigen Weg!')">QUAF: Du hast einen Fehler gemacht</button>
+    <button onclick="showMessage('Du hast das geschafft! Übung macht den Meister!')">QUAF: Keine Sorge</button>
+    <button onclick="showMessage('Super! Jetzt fokussiere dich, um das nächste Mal noch besser zu spielen!')">QUAF: Du bist fast da</button>
+    <button onclick="showMessage('Das ist eine gute Gelegenheit, um deine Fähigkeiten zu verbessern!')">QUAF: Weiter üben</button>
+    <button onclick="showMessage('Harte Arbeit zahlt sich aus, du bist auf dem richtigen Weg!')">QUAF: Du musst dich anstrengen</button>
+    <button onclick="showMessage('Erlaube dir, Fehler zu machen. Du wirst stärker daraus hervorgehen!')">QUAF: Du kannst es besser</button>
+    <button onclick="showMessage('Erinnere dich: Jeder Verlust ist ein Schritt in Richtung Erfolg!')">QUAF: Bleib motiviert</button>
+</div>
+
+<div class="message" id="message"></div>
+<div class="ad-container" id="adContainer">
+    <p>Wusstest du, dass du bei uns jederzeit deine **Skills verbessern** kannst? Besuche unseren **Trainingbereich**!</p>
+</div>
+
+<script>
+    function showMessage(message) {
+        const messageContainer = document.getElementById('message');
+        const adContainer = document.getElementById('adContainer');
+
+        // Zeige die motivierende Nachricht
+        messageContainer.textContent = message;
+        messageContainer.style.display = "block";
+
+        // Zeige die subtile Werbung nach einer kurzen Verzögerung
+        setTimeout(() => {
+            adContainer.style.display = "block";
+        }, 1500);
+
+        // Verstecke die Nachricht nach 5 Sekunden
+        setTimeout(() => {
+            messageContainer.style.display = "none";
+            adContainer.style.display = "none";
+        }, 8000);
+    }
+</script>
+
+</body>
+</html>
