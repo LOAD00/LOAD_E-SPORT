@@ -320,3 +320,44 @@
 
 </body>
 </html>
+import random
+
+# Eine größere Datenbank für häufig gestellte Fragen und Antworten
+esport_antworten = {
+    "Was ist E-Sport?": "E-Sport, oder elektronischer Sport, bezieht sich auf den wettbewerbsmäßigen Einsatz von Videospielen.",
+    "Was sind die bekanntesten E-Sport-Spiele?": "Einige der bekanntesten E-Sport-Spiele sind League of Legends, Dota 2, Counter-Strike: Global Offensive, und Fortnite.",
+    "Wer sind die besten E-Sport-Spieler?": "Zu den bekanntesten E-Sport-Spielern gehören Faker (League of Legends), KuroKy (Dota 2) und s1mple (CS:GO).",
+    "Wie wird man ein E-Sport-Profi?": "Um ein E-Sport-Profi zu werden, braucht man viel Übung, strategisches Denken und eine gute Teamarbeit. Es hilft, ein Team zu finden und an Turnieren teilzunehmen.",
+    "Was ist ein LAN-Turnier?": "Ein LAN-Turnier ist ein Wettbewerb, bei dem Spieler oder Teams auf einer lokalen Netzwerkverbindung gegeneinander antreten.",
+    "Was ist das größte E-Sport-Turnier?": "Das größte E-Sport-Turnier ist das 'The International' für Dota 2, mit einem Preisgeld von über 40 Millionen Dollar.",
+    "Was ist ein Streamer?": "Ein Streamer ist jemand, der live auf Plattformen wie Twitch oder YouTube spielt und seine Spiele mit anderen teilt.",
+    "Was bedeutet 'Meta' in E-Sport?": "Die 'Meta' bezeichnet die vorherrschende Spielweise, die als am effektivsten angesehen wird, basierend auf den aktuellen Spielmechaniken und den Strategien, die im Spiel erfolgreich sind.",
+    "Wie verdiene ich Geld mit E-Sport?": "Es gibt mehrere Wege, Geld im E-Sport zu verdienen: durch Turniergewinne, Sponsoring, Streaming, YouTube und als Content Creator.",
+    "Was ist ein Esports-Manager?": "Ein Esports-Manager kümmert sich um das Teammanagement, Sponsoring, Veranstaltungen und die finanzielle Seite eines E-Sport-Teams.",
+    "Was sind die besten E-Sport-Teams?": "Einige der bekanntesten E-Sport-Teams sind Team Liquid, FaZe Clan, Cloud9 und Astralis.",
+    "Was ist ein 'GG' in E-Sport?": "'GG' steht für 'Good Game' und wird verwendet, um das Spiel zu beenden oder Respekt gegenüber dem Gegner zu zeigen.",
+    "Was ist der Unterschied zwischen einem Casual und einem Pro-Spieler?": "Casual-Spieler spielen meist aus Spaß, während professionelle Spieler intensiv trainieren und an Wettbewerben teilnehmen, um Geld zu verdienen.",
+    "Wie sieht der Trainingsplan eines E-Sport-Profis aus?": "Ein E-Sport-Profi hat einen strengen Trainingsplan, der tägliches Üben, Teamstrategien, Fitness und Mentaltraining umfasst.",
+    "Was ist ein Tilt in E-Sport?": "Tilt bezeichnet einen Zustand, in dem ein Spieler emotional aufgebracht oder frustriert ist und dadurch seine Leistung im Spiel negativ beeinflusst wird.",
+    "Was sind die besten E-Sport-Streaming-Plattformen?": "Die bekanntesten E-Sport-Streaming-Plattformen sind Twitch, YouTube Gaming und Facebook Gaming.",
+    "Was ist eine 'Patch-Note' in einem Spiel?": "Patch-Notizen beschreiben die Änderungen und Updates, die an einem Spiel vorgenommen wurden, wie z. B. Balancing, Fehlerbehebungen oder neue Funktionen.",
+    "Warum sind E-Sport-Turniere so beliebt?": "E-Sport-Turniere sind beliebt, weil sie spannende Wettkämpfe bieten, bei denen die besten Spieler der Welt gegeneinander antreten, und durch die Zuschauererfahrung wird das Event noch intensiver.",
+}
+
+# Funktion, um auf eine Frage zu antworten
+def esport_chatbot():
+    print("Willkommen beim erweiterten E-Sport-Chatbot! Stelle mir eine Frage zu E-Sport.")
+    
+    while True:
+        frage = input("Du: ")
+        
+        if frage.lower() == "exit" or frage.lower() == "quit":
+            print("Der Chatbot wird jetzt beendet.")
+            break
+        
+        # Versucht, eine Antwort aus der Datenbank zu finden
+        antwort = esport_antworten.get(frage, "Tut mir leid, das weiß ich nicht. Frag mich etwas anderes!")
+        print(f"Chatbot: {antwort}")
+
+# Starte den Chatbot
+esport_chatbot()
